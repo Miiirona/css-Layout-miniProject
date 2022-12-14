@@ -1,0 +1,104 @@
+#1.0 
+
+div는 블록.
+블록은 width, height 있음. 그리고 옆에 아무도 못 옴.
+SO
+inline-block으로 만들어주면 블록 유지한 채(width, height)로 옆에 위치 가능.
+그냥 inline은 width, height올 수 없음. 텍스트같은 거. 
+
+
+#1.1 
+
+flexcontainer : 
+	부모태그에 display: flex;
+	
+	
+#1.2 #1.3
+
+flex-direction : row(가로로 / horizontal / main-axis: horizontal, cross-axis: vertical) 
+	justifycontent // main-axis에서 items 정렬(가로방향으로)
+	align-items // cross-axis에서 items 정렬(세로방향으로)
+
+flex-direction : column(세로로 / vertical / main-axis: vertical, cross-axis: horizontal);
+	justifycontent // main-axis에서 정렬(세로방향으로)
+	align-items // cross-axis에서 정렬(가로방향으로)
+	
+	
+#1.4
+
+*align-self
+: cross-axis, one box(one of child)
+
+-align-items는 	부모요소가 자식요소를 움직인다 (부모요소 안에 있는 모든 것들이 움직여짐) : 수동적
+-align-self는 	지정된 자식요소 하나가 self로 움직인다 : 능동적
+
+				(공통점: cross-axis로 움직인다)
+	
+	
+*order
+:HTML변경할 수 없을 때
+ nth-child의 순서를 변경
+ order 오름차순으로 정렬됨, order 값이 같으면 소스 코드 순서로 정렬
+
+.child:nth-child(2){
+order: 1;
+}						order을 지정하지 않으면 order:0; 이므로 order:1;이 가장 크다. => 가장 뒤쪽으로 감
+						//.child:nth-child(1){order: 0;} //.child:nth-child(3){order: 0;}
+						//구현순서 => (1) (3) (2) 
+						실제 HTML은 변경되지 않음
+
+
+#1.5
+
+*flex-wrap
+
+flexbox는 모든 것들이 한줄에 있도록 하는 것에만 집중한다.
+width가 설정되어 있어도 한줄에 넣기 위해 무시한다.
+
+(default =) flex-wrap: nowrap;
+flex-wrap: wrap; => width지켜주어 아랫줄로 넘김
+
+=>두 줄 이상이 될 때 줄 사이 간격이 생긴다. 
+	줄간격 조정할 때 
+	align-content: flex-start; //간격이 0, start지점에 붙음
+	align-content: center; //간격이 0, cross-axis 가운데에 정렬 
+	align-content: space-between; //
+
+flex-wrap: wrap-reverse;
+
+*flex-direction: column/ column-reverse/ row/ row-reverse;
+
+
+#1.6
+
+*flex-shrink 
+	:flexbox가 쥐어짜질 떄(flex-wrap: nowrap;) 어떤 박스가 쥐어짜질 지 정하기
+
+(default =) flex-shrink: 1;
+
+flex-shrink: 2; //flex-shrink: 1;보다 두 배로 쥐어짜진다 
+flex-shrink: 3; //					세 배로 쥐어짜진다
+
+
+*flex-grow
+	:flex-shrink와 반대 => flex-grow 설정하면 빈공간을 박스가 먹게 되는데 어떤 박스가 먹어서 늘어날지
+	
+flex-grow: 1; // 남아있는 공간의 n(박스의 개수)분의 1만큼 
+flex-grow: 2; // 남아있는 공간의 n(박스의 개수)분의 2만큼 
+
+
+#1.7
+
+*flex-basis 
+	:element에게 main-axis의 크기를 줌. 찌그러지거나 늘어나기 전에.
+	+flex-grow / flex-shrink 주지 않는다면 width랑 똑같음 
+	
+
+**flexboxfroggy.com
+
+#pond {								#pond{
+display: flex;						display: flex;
+flex-direction: column;		=		flex-flow: column wrap;
+flex-wrap: wrap;					}
+}
+

@@ -1,0 +1,13 @@
+#2 GRID
+
+#2.2
+
+부모요소{
+	display: grid;
+	grid-template-columns: 첫번째열width, 두번째열width,  세번째열width,,,,;
+	gird-template-rows: 첫번째행height, 두번째행height, 세번째행height,,,,;
+	column-gap: 컬럼 사이의 빈공간크기;
+	row-gap: 로우 사이의 빈공간크기;
+	//gap: 모든 컬럼과 로우 사이의 빈공간크기;	
+}
+

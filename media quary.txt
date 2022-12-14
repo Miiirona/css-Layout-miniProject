@@ -1,0 +1,51 @@
+*media quary
+
+@media screen and (){
+}
+
+
+
+@media screen and (max-width: 400px){
+	div{
+		background-color: tamato;
+	}
+}											//만약 screen의 너비가 400px보다 작다면(최대크기가 400이라면) {div{background-color: tomato;}}를 실행
+
+--------------------
+
+@media screen and (min-width: 650px) and (max-width: 750px){
+	div{
+		background-color: teal;
+	}
+}											//만약 screen의 너비가 650보다 크고 750보다 작다면 ~~~실행
+
+---------------------
+
+@media screen and (max-width: 400px){
+	div{
+		background-color: tamato;
+	}
+}
+@media screen and (max-width: 800px){
+	div{
+		background-color: black;
+	}
+}
+@media screen and (max-width: 1200px){
+	div{
+		background-color: violet;
+	}
+}											//screen의 너비가 400까지는 tomato; 800까지는 black; 1200까지는 violet;
+												=> 400이하도, 800이하도 모두 1200 이하이므로 violet만 나옴.
+											
+----------------------
+
+@media screen and (min-width: 600px) and (max-width: 1200px) and (orientation: landscape){
+	div{
+		background-color: wheat;
+	}
+	span{
+		display : none;
+	}
+}								// screen의 너비가 600보다 크고 1200보다 작고 가로모드일 때 div의 배경색을 wheat로, span을 보여주지 않기
+																(<-> 세로모드: portrait)
