@@ -8,7 +8,9 @@ body {
 }
 .whole{
   display: grid;
-  grid-template-columns: 13fr 0.8fr 8fr;
+  grid-template-columns: 13fr 0.7fr 8fr;
+  width: 100%;
+  height: 100vh;
 }
 .orange-column{
   grid-column-start: 1;
@@ -16,7 +18,6 @@ body {
   grid-template-rows: repeat(6, 110px);
   gap: 1px;
   background-color: #FF0400;
-  /* padding: 5px; */
   color: #FF0400;
 }
 .orange-column_row{
@@ -28,6 +29,12 @@ body {
 .orange-column_row_f-column, .orange-column_row_s-column{
   background-color: #FF7400;
 }
+
+.orange-column_row:hover{
+  color:white;
+  border: 1px solid white;
+  background-color: white;
+}
 .orange-column_row_f-column{
   writing-mode: vertical-rl;
   transform: rotate(0.5turn);
@@ -35,14 +42,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.8em;
+  font-size: 0.9vw;
+  flex-wrap: wrap;
 }
 .orange-column_row_s-column{
-  font-size: 5em;
+  font-size: 5.5vw;
   text-transform: capitalize;
   padding:  15px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .orange-column_row_t-column{
@@ -57,10 +66,12 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 0.8em;
+  flex-wrap: wrap;
+  font-size: 1vw;
 }
 .orange-column_row_t-column span{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 80%;
@@ -73,12 +84,14 @@ body {
 .middle-column{
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  font-size: 1.4em;
+  font-size: 1.6em;
   font-weight: 500;
   position: relative;
 }
 .middle-column div{
   writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
 }
 .middle-column div:first-child{
   background-color: #FF00FF;
@@ -91,6 +104,8 @@ body {
   position: absolute;
   top: 50%;
   color: white;
+  left: 0;
+  
 }
 
 .red-column{
@@ -112,7 +127,7 @@ body {
 }
 .red_contents div{
   width: 47.8%;
-  margin: 15px 3px;
+  margin: 12px 3px;
   border-top: 1px solid black;
   padding: 13px 0;
 }
